@@ -9,6 +9,9 @@ public class AssetController : AssetPostprocessor
 {
        private void OnPreprocessTexture()
        {
+               var importer = assetImporter as TextureImporter;
+               importer.anisoLevel = 3;
+               importer.filterMode = FilterMode.Trilinear; 
             //  throw new NotImplementedException();
        }
 
