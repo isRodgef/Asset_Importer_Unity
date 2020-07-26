@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 
 
-public class FolderInspector : AssetPostprocessor
+public class AssetController : AssetPostprocessor
 {
        private void OnPreprocessTexture()
        {
@@ -14,7 +14,15 @@ public class FolderInspector : AssetPostprocessor
 
        private void OnPostprocessTexture(Texture2D texture)
        {
-       ///       throw new NotImplementedException();
+
+             // var  importer   = assetImporter as TextureImporter ; ; 
+            //  importer.maxTextureSize 
+              
+              ///sampleSettings.maxTextureSize = 111000;
+
+              
+              
+              ///       throw new NotImplementedException();
        }
 
        private void OnPreprocessAudio()
@@ -24,8 +32,9 @@ public class FolderInspector : AssetPostprocessor
 
        private void OnPostprocessAudio(AudioClip arg)
        {
+              AudioModifier.modifyAttributes();
 
-              /*
+              
               var importer = assetImporter as AudioImporter;
 
               if (importer == null)
@@ -35,15 +44,15 @@ public class FolderInspector : AssetPostprocessor
               AudioImporterSampleSettings sampleSettings = importer.defaultSampleSettings;
 
 
-              sampleSettings.loadType = AudioClipLoadType.CompressedInMemory;
-              sampleSettings.compressionFormat = AudioCompressionFormat.Vorbis;
+              sampleSettings.loadType = AudioClipLoadType.Streaming;
+              sampleSettings.compressionFormat = AudioCompressionFormat.AAC;
 
               importer.defaultSampleSettings = sampleSettings;
 
 
 
               Debug.Log(arg);
-              */
+              
               ///throw new NotImplementedException();
        }
        
